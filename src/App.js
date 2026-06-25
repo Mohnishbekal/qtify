@@ -15,6 +15,10 @@ function App() {
           title="Top Albums"
           apiEndpoint="https://qtify-backend.labs.crio.do/albums/top"
         />
+          <Section
+          title="New Albums"
+          apiEndpoint="https://qtify-backend.labs.crio.do/albums/new"
+        />
     </div>
     </BrowserRouter>
   );
