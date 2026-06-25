@@ -13,3 +13,13 @@
 body {
   overflow-x: hidden;
 }
+
+.swiper-button-next,
+.swiper-button-prev {
+  pointer-events: all !important;
+}
+
+.swiper-button-next svg,
+.swiper-button-prev svg {
+  pointer-events: none;
+}
