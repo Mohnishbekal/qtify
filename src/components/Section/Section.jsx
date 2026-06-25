@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
+import Carousel from "../Carousel/Carousel";
 import axios from "axios";
 
 function Section({ title, apiEndpoint }) {
@@ -13,6 +14,15 @@ function Section({ title, apiEndpoint }) {
     });
   }, [apiEndpoint]);
 
+  const cards = data && data.map((album) => (
+    <Card
+      key={album.id}
+      image={album.image}
+      title={album.title}
+      follows={album.follows}
+    />
+  ));
+
   return (
     <div className={styles.section}>
       <div className={styles.header}>
@@ -24,16 +34,11 @@ function Section({ title, apiEndpoint }) {
           {collapsed ? "Show All" : "Collapse"}
         </button>
       </div>
-      {collapsed && (
+      {collapsed ? (
+        <Carousel items={cards} />
+      ) : (
         <div className={styles.grid}>
-        {data && data.map((album) => (
-            <Card
-                key={album.id}
-                image={album.image}
-                title={album.title}
-                follows={album.follows}
-            />
-        ))}
+          {cards}
         </div>
       )}
     </div>
