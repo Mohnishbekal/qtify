@@ -5,7 +5,7 @@ import axios from "axios";
 
 function Section({ title, apiEndpoint }) {
   const [data, setData] = useState([]);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   useEffect(() => {
     axios.get(apiEndpoint).then((response) => {
