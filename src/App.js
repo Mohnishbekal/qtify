@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import Section from "./components/Section/Section";
 import "./App.css";
 
 function App() {
@@ -10,6 +11,10 @@ function App() {
     <div>
       <Navbar/>
       <Hero />
+          <Section
+          title="Top Albums"
+          apiEndpoint="https://qtify-backend.labs.crio.do/albums/top"
+        />
     </div>
     </BrowserRouter>
   );
