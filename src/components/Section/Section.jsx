@@ -24,7 +24,7 @@ function Section({ title, apiEndpoint }) {
           {collapsed ? "Show All" : "Collapse"}
         </button>
       </div>
-      {!collapsed && (
+      {collapsed && (
         <div className={styles.grid}>
         {data && data.map((album) => (
             <Card
