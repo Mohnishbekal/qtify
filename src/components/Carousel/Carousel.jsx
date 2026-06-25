@@ -11,6 +11,7 @@ function Carousel({ items }) {
       navigation
       slidesPerView={"auto"}
       spaceBetween={24}
+      slidesPerGroup={2}
     >
       {items.map((item, index) => (
         <SwiperSlide key={index} style={{ width: "auto" }}>
